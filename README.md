@@ -1,4 +1,3 @@
-=====================
 Introduction to Alphacontainer
 =====================
 
@@ -12,7 +11,6 @@ Alphacontainer is based on Basic (https://www.drupal.org/project/basic).
 Less code spam, more ham.
 
 
-============
 Installation
 ============
 
@@ -23,7 +21,6 @@ packages are included via 'npm install'
   - Bourbon (http://bourbon.io/)
   - Bourbon Neat (http://neat.bourbon.io/)
 
-============================
 How to compile SASS in Alphacontainer
 ============================
 
@@ -43,8 +40,6 @@ Or simply compile the latest:
 
   node-sass sass -o css --output-style expanded --source-map true
 
-
-=======================
 What are the files for?
 =======================
 
@@ -65,7 +60,6 @@ What are the files for?
   Provides additional settings in the theme settings page.
 
 
-============
 In /sass
 ============
 
@@ -77,7 +71,6 @@ In /sass
   Styles for the admin tabs (compiles to css/components/tabs.css)
 
 
-============
 In /js
 ============
 
@@ -97,7 +90,6 @@ In /js
   scripts.js file.
 
 
-===================
 Changing the Layout
 ===================
 
@@ -116,7 +108,6 @@ This is how the page template is buit in Alphacontainer, and it works in fluid a
 layout. Refer to the notes in layout.sass to see how to modify the layout.
 
 
-===========================
 How to Use Grunt with Alphacontainer
 ===========================
 
@@ -147,7 +138,6 @@ line:
 This will initialize Grunt and start watching changes to your SASS files. Voilà!
 
 
-================
 Bugs & Questions
 ================
 
@@ -157,7 +147,6 @@ any questions or bug reports:
 https://github.com/Primajin/alphacontainer/issues
 
 
-====================
 Current maintainers:
 ====================
 * Jannis Lennart Hell (Primajin)              - https://github.com/Primajin
