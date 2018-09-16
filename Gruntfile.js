@@ -1,6 +1,8 @@
 /**
  * @file
  */
+var sass = require('node-sass');
+
 module.exports = function(grunt) {
 
   // This is where we configure each task that we'd like to run.
@@ -102,7 +104,8 @@ module.exports = function(grunt) {
       // This will compile all of our sass files
       // Additional configuration options can be found at https://github.com/sindresorhus/grunt-sass
       options: {
-        sourceMap: true,
+        implementation: sass,
+        sourceMap: false,
         // This controls the compiled css and can be changed to nested, compact or compressed.
         outputStyle: 'expanded',
         precision: 5

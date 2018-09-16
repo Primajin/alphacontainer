@@ -66,6 +66,9 @@
          });*/
 
         $owlCarousel.owlCarousel({
+          autoplay: true,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
           items: 1,
           loop: true,
           margin: 0,
