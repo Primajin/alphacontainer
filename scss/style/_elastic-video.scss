@@ -1,0 +1,16 @@
+.elastic-video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 55%;
+  //padding-top: 15px;
+  padding-top: 0;
+  position: relative;
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

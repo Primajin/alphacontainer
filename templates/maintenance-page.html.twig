@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ *
+ * @ingroup themeable
+ */
+#}
+<header role="banner">
+  {% if logo %}
+    <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+      <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+    </a>
+  {% endif %}
+
+  {% if site_name or site_slogan %}
+    {% if site_name %}
+      <div class="site-name">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.54 100.42"><path d="M15.3 27.54v-19l-2.43-2.42H8.55L6.12 8.55H0V6.12L6.12 0h9.18l6.12 6.12v21.42H15.3zm-9.18 0L0 21.42v-4.6l6.12-6.1h6.12v6.1h-3.7l-2.4 2.28 2.42 2.32h3.7v6.12H6.1zm27.27 0l-6.17-6.12V6.12L33.4 0h3.05v6.12h-.63L33.4 8.55V19l2.42 2.43h.63v6.12H33.4zm9.13-19L40.1 6.12h-.62V0h3.06l6.12 6.12v2.43h-6.14zm0 19H39.5v-6.12h.64L42.57 19h6.12v2.42l-6.17 6.12zM54.1 42.38V0h6.13v42.38m9.17-14.84h-6.1v-6.12h3.64L69.42 19V8.54L66.94 6.1H63.3V0h6.12l6.12 6.12v15.3l-6.12 6.12z" /><path d="M60.25 41.38v59.04h-6.12V41.38" class="hidden-lg"/></svg></a>
+      </div>
+    {% endif %}
+
+    {% if site_slogan %}
+      <div class="site-slogan"><span>ALPHA</span><span>CONTAINER</span><span>PICTURES</span></div>
+    {% endif %}
+  {% endif %}
+</header>
+
+<main role="main">
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+
+  {{ page.highlighted }}
+
+  {{ page.content }}
+</main>
+
+{% if page.sidebar_first %}
+  <aside role="complementary">
+    {{ page.sidebar_first }}
+  </aside>
+{% endif %}
+
+{% if page.sidebar_second %}
+  <aside role="complementary">
+    {{ page.sidebar_second }}
+  </aside>
+{% endif %}
+
+{% if page.footer %}
+  <footer role="contentinfo">
+    {{ page.footer }}
+  </footer>
+{% endif %}

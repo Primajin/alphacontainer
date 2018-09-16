@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'mixins';
+
+.page-ueber-uns {
+  .content {
+    @include breakpoint(xs) {
+      flex-flow: row wrap;
+    }
+  }
+
+  aside {
+    //text-transform: uppercase;
+    padding-left: 15px;
+  }
+}
+
+//For Broadcast-companie's logos see: _references.scss

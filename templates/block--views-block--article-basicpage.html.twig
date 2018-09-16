@@ -1,0 +1,14 @@
+{% set content_rendered %}{{ content }}{% endset %}
+{% set pageContents = content_rendered|split('¶') %}
+{% if pageContents|length %}
+  <div class="content">
+  <article class="basic-page" role="article" typeof="schema:Article">
+    {{ pageContents[1]|raw }}
+  </article>
+  <aside>
+    {{ pageContents[2]|raw }}
+  </aside>
+  </div>
+{% endif %}
+
+

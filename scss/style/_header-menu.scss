@@ -1,0 +1,97 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  padding-top: $header-height-xs + 25px;
+
+  @include breakpoint(md) {
+    padding-top: $header-height-md + 25px;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $header-height-lg + 25px;
+  }
+}
+
+#header {
+  background: $menu-background;
+  height: $header-height-xs;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: $z-index-header;
+
+  @include breakpoint(md) {
+    height: $header-height-md;
+  }
+
+  @include breakpoint(lg) {
+    height: $header-height-lg;
+  }
+}
+
+#burger {
+  cursor: pointer;
+  left: 17px;
+  position: absolute;
+  top: 27px;
+  width: 27px;
+}
+
+.site-name {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 50px;
+
+  @include breakpoint(md) {
+    right: 20px;
+    top: 20px;
+  }
+
+  @include breakpoint(lg) {
+    left: 15px;
+    right: auto;
+    top: 15px;
+  }
+
+  svg {
+    fill: $acp-red;
+  }
+}
+
+.site-slogan {
+  font-size: 1.1rem;
+  position: absolute;
+  right: 30px;
+  text-align: right;
+  top: 36px;
+
+  @include breakpoint(md) {
+    font-size: 1.2rem;
+    right: 40px;
+    top: 44px;
+  }
+
+  @include breakpoint(lg) {
+    right: 25px;
+    top: 12px;
+  }
+
+  span {
+    display: block;
+
+    &:first-child {
+      color: $acp-red;
+    }
+
+    &:nth-child(2) {
+      color: $black;
+    }
+
+    &:nth-child(3) {
+      color: $gray;
+    }
+  }
+}

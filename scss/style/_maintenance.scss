@@ -1,0 +1,9 @@
+@import 'variables';
+
+.maintenance-page {
+  h1 {
+    color: $acp-red;
+    font-family: $container-font;
+    letter-spacing: 3px;
+  }
+}

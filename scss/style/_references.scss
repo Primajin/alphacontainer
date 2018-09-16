@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'mixins';
+
+.references {
+  display: flex;
+  flex-flow: row wrap;
+
+  h3 {
+    flex-basis: 100%;
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  p {
+    flex-basis: 50%;
+
+    @include breakpoint(sm) {
+      flex-basis: 33%;
+    }
+
+    @include breakpoint(md) {
+      flex-basis: 25%;
+    }
+
+    @include breakpoint(xl) {
+      flex-basis: 175px;
+    }
+  }
+}
