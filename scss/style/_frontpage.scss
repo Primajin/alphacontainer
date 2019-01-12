@@ -119,9 +119,13 @@
 .owl-theme .owl-nav [class*=owl-] {
   background: transparent;
   color: $white;
-  font: 8rem $container-font;
+  font: 4rem $container-font;
   position: fixed;
   top: 50%;
+
+  @include breakpoint(lg) {
+    font-size: 8rem;
+  }
 
   &:hover {
     background: transparent;
