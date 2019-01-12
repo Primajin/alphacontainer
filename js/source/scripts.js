@@ -76,6 +76,9 @@
           navText: ['V', 'V']
         });
 
+        $('.owl-prev').attr('title', 'vorheriges Video');
+        $('.owl-next').attr('title', 'nächstes Video');
+
         var $overviewPage = $('.overview-page');
         if ($overviewPage.length) {
           var $items = $overviewPage.find('.item');
