@@ -45,18 +45,17 @@
               }
             }, waitTime);
           });
-        } else {
+        }
 
-          if (!$('#burger').length) {
-            var header = $('#header');
-            var navi = $('#navigation');
-            var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
-            burger.on('click', function () {
-              navi.toggleClass('open');
-            });
+        if (!$('#burger').length) {
+          var header = $('#header');
+          var navi = $('#navigation');
+          var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
+          burger.on('click', function () {
+            navi.toggleClass('open');
+          });
 
-            header.prepend(burger)
-          }
+          header.prepend(burger)
         }
 
         /* owl.on('initialized.owl.carousel resized.owl.carousel changed.owl.carousel', function (event) {
@@ -138,18 +137,17 @@
               }
             }, waitTime);
           });
-        } else {
+        }
 
-          if (!$('#burger').length) {
-            var header = $('#header');
-            var navi = $('#navigation');
-            var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
-            burger.on('click', function () {
-              navi.toggleClass('open');
-            });
+        if (!$('#burger').length) {
+          var header = $('#header');
+          var navi = $('#navigation');
+          var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
+          burger.on('click', function () {
+            navi.toggleClass('open');
+          });
 
-            header.prepend(burger)
-          }
+          header.prepend(burger)
         }
       });
 
