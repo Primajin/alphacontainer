@@ -68,14 +68,19 @@
   }
 
   @include breakpoint(md) {
-    .item {
-      flex: 0 1 66%;
-      height: 256px;
+    //.item {
+    //  flex: 0 1 66%;
+    //  height: 256px;
+    //
+    //  .page-magazin &,
+    //  ~ .item {
+    //    flex: 0 1 calc(33% - 10px);
+    //  }
+    //}
 
-      .page-magazin &,
-      ~ .item {
-        flex: 0 1 calc(33% - 10px);
-      }
+    .item {
+      flex: 0 1 calc(33% - 10px);
+      height: 256px;
     }
   }
 
