@@ -62,7 +62,10 @@ body {
 }
 
 .site-slogan {
+  font-family: 'Source Code Pro', 'Lucida Console', 'Courier New', monospace;
   font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
   position: absolute;
   right: 30px;
   text-align: right;
