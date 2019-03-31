@@ -1,152 +1,68 @@
-Introduction to Alphacontainer
-=====================
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Alphacontainer boasts a clean HTML5 structure with extensible CSS classes and IDs for
-unlimited theming possibilities as well as a top-down load order for improved
-SEO. It is fully responsive out-of-the-box and provides an adaptive, elegant,
-SASS-based grid system (Bourbon Neat).
+## Available Scripts
 
-Alphacontainer is based on Basic (https://www.drupal.org/project/basic).
+In the project directory, you can run:
 
-Less code spam, more ham.
+### `npm start`
 
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Installation
-============
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-Alphacontainer utilizes SASS for adaptive grids and layouts and general structure of the
-site. It's recommended to use SASS for building out your theme. The following
-packages are included via 'npm install'
-  - SASS (http://sass-lang.com/)
-  - Bourbon (http://bourbon.io/)
-  - Bourbon Neat (http://neat.bourbon.io/)
+### `npm test`
 
-How to compile SASS in Alphacontainer
-============================
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-To use SASS and automatically compile it within your theme, please refer to "How
-to Use Grunt with Alphacontainer" in the documentation below.
+### `npm run build`
 
-Install node-sass:
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-  npm install node-sass -g
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-If you don't like Grunt, or would just prefer to use SASS' internal watch
-functionality, simply cd into your theme directory and run:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-  node-sass sass -o css --output-style expanded --source-map true --watch
+### `npm run eject`
 
-Or simply compile the latest:
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-  node-sass sass -o css --output-style expanded --source-map true
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-What are the files for?
-=======================
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- alphacontainer.info.yml
-  Provide informations about the theme, like regions and libraries.
-- block.html.twig
-  Template to edit the blocks.
-- comment.html.twig
-  Template to edit the comments.
-- node.html.twig
-  Template to edit the nodes (in content).
-- page.html.twig
-  Template to edit the page.
-- alphacontainer.theme
-  Used to modify Drupal's default behavior before outputting HTML through the
-  templates.
-- theme-settings.php
-  Provides additional settings in the theme settings page.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-In /sass
-============
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- layout/layout.sass
-  Defines the layout of the theme (compiles to css/layout/layout.css)
-- theme/print.sass
-  Defines the way the theme looks when printed (compiles to css/theme/print.css)
-- components/tabs.sass
-  Styles for the admin tabs (compiles to css/components/tabs.css)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-In /js
-============
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-- modernizr.js
-  Modernizr detects HTML and CSS features and applies classes to
-  the <html> object you can then reference in your stylesheets. Use the URL at
-  the top of the modernizr.js file to customize the features you wish to detect.
-- selectivizr-min.js
-  This script will only be loaded for Internet Explorer 8
-  through the ie8 theme library. It will provide a JS fallback for CSS :nth-
-  child, an important part of the Bourbon Neat grid system, as it is not
-  supported in Internet Explorer 8.
-- build/scripts.js & source/scripts.js
-  When using Grunt, save files to the
-  source folder and a minified version will automatically be saved to the build
-  folder. See comments in alphacontainer.libraries.yml file to enable the starter
-  scripts.js file.
+### Analyzing the Bundle Size
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-Changing the Layout
-===================
+### Making a Progressive Web App
 
-The layout used in Alphacontainer is fairly similar to the Holy Grail method. It has been
-tested on all major browsers including IE (5 to >10), Opera, Firefox, Safari,
-and Chrome. The purpose of this method is to have a minimal markup for an ideal
-display. For accessibility and search engine optimization, the best order to
-display a page is the following:
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-1. Header
-2. Content
-3. Sidebars
-4. Footer
+### Advanced Configuration
 
-This is how the page template is buit in Alphacontainer, and it works in fluid and fixed
-layout. Refer to the notes in layout.sass to see how to modify the layout.
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
+### Deployment
 
-How to Use Grunt with Alphacontainer
-===========================
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Grunt (http://gruntjs.com/) requires Node.JS to be installed on your machine.
-There are various package managers that can handle this for you.
+### `npm run build` fails to minify
 
-https://nodejs.org/download/
-
-Once Node.JS is installed, go to the root folder of Alphacontainer and install your Grunt
-packages:
-
-  npm install
-
-This will install the neccessary node_modules to run Grunt. In order for Grunt
-to work from the command line we are going to need the Grunt CLI. Open a new
-Terminal window and type:
-
-  npm install -g grunt-cli
-
-This will install the CLI globally. Restart terminal when that is complete and
-you will now be able to use Grunt commands.
-
-Once installed, cd to the root folder of Alphacontainer and run Grunt via the command
-line:
-
-  grunt
-
-This will initialize Grunt and start watching changes to your SASS files. Voilà!
-
-
-Bugs & Questions
-================
-
-Thanks for using Alphacontainer, and remember to use the issue queue in drupal.org for
-any questions or bug reports:
-
-https://github.com/Primajin/alphacontainer/issues
-
-
-Current maintainers:
-====================
-* Jannis Lennart Hell (Primajin)              - https://github.com/Primajin
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
