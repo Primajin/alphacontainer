@@ -3,7 +3,7 @@ import withStyles from 'react-jss';
 
 import logo from '../logo.svg';
 
-const style = {
+const style = ({colors: {primary: primaryColor}}) => ({
   App: {
     textAlign: 'center'
   },
@@ -23,9 +23,9 @@ const style = {
     color: 'white'
   },
   AppLink: {
-    color: '#61dafb'
+    color: primaryColor
   }
-};
+});
 
 const RootComponent = ({classes}) =>
   <div className={classes.App}>
