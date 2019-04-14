@@ -45,5 +45,8 @@ CI=true npm test || fail "Tests failed! Exiting..."
 
 announce "Building..."
 CI=true npm run build
-
 success "Build was successful"
+
+announce "Removing node_modules again"
+rm -rf node_modules
+printf "Done updating ${RED}Frontend${NC}!\n"

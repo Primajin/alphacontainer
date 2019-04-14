@@ -82,6 +82,6 @@ then
   announce "Ok then we keep ${filename}"
 fi
 
-printf "Done updating  ${BLUE}Drupal${NC}!\n"
+printf "Done updating ${BLUE}Drupal${NC}!\n"
 echo "Now run database update script by going to /update.php"
 echo "And then clear the cache in /admin/config/development/performance"
