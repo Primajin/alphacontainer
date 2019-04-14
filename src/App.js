@@ -6,12 +6,13 @@ import theme from './theme';
 import RootComponent from './RootComponent';
 import TestComponent from './TestComponent';
 
-const App = () =>
+const App = () => (
   <ThemeProvider theme={theme}>
     <>
-      <RootComponent/>
-      <TestComponent/>
+      <RootComponent />
+      <TestComponent />
     </>
-  </ThemeProvider>;
+  </ThemeProvider>
+);
 
 export default App;
