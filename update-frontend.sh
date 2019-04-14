@@ -38,12 +38,12 @@ git pull
 success "Updating was successful"
 
 announce "Installing dependencies"
-npm ci
+CI=true npm ci
 
 announce "Testing code"
-npm test || fail "Tests failed! Exiting..."
+CI=true npm test || fail "Tests failed! Exiting..."
 
 announce "Building..."
-npm build
+CI=true npm run build
 
 success "Build was successful"
