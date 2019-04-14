@@ -1,4 +1,4 @@
-![Logo Alpha Container Pictures](public/logo.svg)
+![Logo Alpha Container Pictures](src/logo.svg)
 
 # Alpha Container Pictures
 
