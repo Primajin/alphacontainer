@@ -16,7 +16,9 @@ const HomepageComponent = () => {
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
       <button onClick={handleFetch}>Fetch</button>
       {(Object.keys(data).length || error) && (
-        <code>{JSON.stringify(state, 2, null)}</code>
+        <code>
+          <pre>{JSON.stringify(state, null, 2)}</pre>
+        </code>
       )}
     </div>
   );
