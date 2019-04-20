@@ -1,17 +1,22 @@
 import React from 'react';
 import { ThemeProvider } from 'react-jss';
-
 import theme from './theme';
-import RootComponent from './RootComponent';
-import TestComponent from './TestComponent';
+import StoreProvider from './store';
+
+import RootComponent from './components/RootComponent';
+import TestComponent from './components/TestComponent';
+import DummyComponent from './components/DummyComponent';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <>
-      <RootComponent />
-      <TestComponent />
-    </>
-  </ThemeProvider>
+  <StoreProvider>
+    <ThemeProvider theme={theme}>
+      <>
+        <RootComponent />
+        <TestComponent />
+        <DummyComponent />
+      </>
+    </ThemeProvider>
+  </StoreProvider>
 );
 
 export default App;
