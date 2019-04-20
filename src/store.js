@@ -1,5 +1,7 @@
 import React, { useReducer } from 'react';
-import homepageReducer, { homepageInitialState } from './reducers/homepageReducer';
+import homepageReducer, {
+  homepageInitialState
+} from './reducers/homepageReducer';
 
 export const Store = React.createContext(undefined);
 
