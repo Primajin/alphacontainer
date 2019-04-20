@@ -1,11 +1,10 @@
 import React from 'react';
 import withStyles from 'react-jss';
 
-import logo from '../logo.svg';
+import Logo from '../atoms/logo';
 
-const style = ({ colors: { primary: primaryColor } }) => ({
+const style = () => ({
   Logo: {
-    fill: primaryColor,
     height: 'auto',
     left: '50%',
     position: 'absolute',
@@ -15,8 +14,6 @@ const style = ({ colors: { primary: primaryColor } }) => ({
   }
 });
 
-const RootComponent = ({ classes }) => (
-  <img src={logo} className={classes.Logo} alt="logo" />
-);
+const RootComponent = ({ classes }) => <Logo className={classes.Logo} />;
 
 export default withStyles(style)(RootComponent);
