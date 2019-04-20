@@ -12,7 +12,7 @@ const HomepageComponent = () => {
   const { loading, data, error } = state;
 
   return (
-    <div>
+    <>
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
       <button onClick={handleFetch}>Fetch</button>
       {(Object.keys(data).length || error) && (
@@ -20,7 +20,7 @@ const HomepageComponent = () => {
           <pre>{JSON.stringify(state, null, 2)}</pre>
         </code>
       )}
-    </div>
+    </>
   );
 };
 
