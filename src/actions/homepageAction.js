@@ -2,6 +2,7 @@ import axios from 'axios';
 import normalize from 'json-api-normalizer';
 
 import { apiUrl, homeError, homeFetch, homeLoading } from '../constants';
+import { transformApiData } from '../utils';
 
 const endpoint = 'node/article';
 
@@ -20,7 +21,9 @@ export const getHomepageItems = dispatch => {
     .then(({ data }) => {
       dispatch({
         type: homeFetch,
-        payload: { data: normalize(data, { endpoint }) }
+        payload: {
+          data: transformApiData(normalize(data, { endpoint }), endpoint)
+        }
       });
 
       dispatch({
