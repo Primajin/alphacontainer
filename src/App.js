@@ -4,16 +4,14 @@ import theme from './theme';
 import StoreProvider from './store';
 
 import RootComponent from './components/RootComponent';
-import TestComponent from './components/TestComponent';
-import DummyComponent from './components/DummyComponent';
+import HomepageComponent from './components/HomeComponent';
 
 const App = () => (
   <StoreProvider>
     <ThemeProvider theme={theme}>
       <>
         <RootComponent />
-        <TestComponent />
-        <DummyComponent />
+        <HomepageComponent />
       </>
     </ThemeProvider>
   </StoreProvider>

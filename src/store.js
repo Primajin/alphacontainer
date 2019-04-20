@@ -1,24 +1,18 @@
 import React, { useReducer } from 'react';
-import errorReducer, { errorInitialState } from './reducers/errorReducer';
-import dummyReducer, { dummyInitialState } from './reducers/dummyReducer';
+import homepageReducer, { homepageInitialState } from './reducers/homepageReducer';
 
 export const Store = React.createContext(undefined);
 
 export default ({ children }) => {
   // Combine reducers
-  const [dummyState, dummyDispatch] = useReducer(
-    dummyReducer,
-    dummyInitialState
-  );
-  const [errorState, errorDispatch] = useReducer(
-    errorReducer,
-    errorInitialState
+  const [homepageState, homepageDispatch] = useReducer(
+    homepageReducer,
+    homepageInitialState
   );
 
   // Export as one store
   const store = {
-    dummy: [dummyState, dummyDispatch],
-    error: [errorState, errorDispatch]
+    homepage: [homepageState, homepageDispatch]
   };
 
   return <Store.Provider value={store}>{children}</Store.Provider>;
