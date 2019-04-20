@@ -4,13 +4,6 @@
   "author": "Jannis Hell",
   "private": true,
   "homepage": "https://alphacontainer.de/",
-  "dependencies": {
-    "json-api-normalizer": "^0.4.14",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-jss": "^8.6.1",
-    "react-scripts": "^2.1.8"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -29,6 +22,13 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "dependencies": {
+    "json-api-normalizer": "^0.4.14",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-jss": "^8.6.1",
+    "react-scripts": "^2.1.8"
+  },
   "devDependencies": {
     "babel-eslint": "9.0.0",
     "babel-loader": "^8.0.5",
@@ -38,6 +38,6 @@
     "eslint-loader": "^2.1.2",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "1.17.0"
+    "prettier": "^1.17.0"
   }
 }
