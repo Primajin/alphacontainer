@@ -34,7 +34,7 @@ const HomepageComponent = () => {
           <pre>{JSON.stringify(state, null, 2)}</pre>
         </code>
       )}
-      {hasData && data.count && (
+      {hasData && parseInt(data.count) && (
         <Slider {...settings}>
           {Object.keys(data.results).map(key => {
             const {
