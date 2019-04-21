@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import withStyles from 'react-jss';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -7,7 +8,24 @@ import { getHomepageItems } from '../../actions/homepageAction';
 import { Store } from '../../store';
 import { backendUrl } from '../../constants';
 
-const HomepageComponent = () => {
+const style = ({
+  colors: { primary: primaryColor, secondary: secondaryColor }
+}) => ({
+  slide: {
+    color: secondaryColor
+  },
+  video: {
+    width: '100%'
+  },
+  wrapper: {
+    padding: '0 50px',
+    '& .slick-prev:before, .slick-next:before': {
+      color: primaryColor
+    }
+  }
+});
+
+const HomepageComponent = ({ classes }) => {
   const [state, dispatch] = useContext(Store).homepage;
 
   const handleFetch = () => {
@@ -34,40 +52,43 @@ const HomepageComponent = () => {
         </code>
       )}
       {hasData && parseInt(data.count) && (
-        <Slider {...settings}>
-          {Object.keys(data.results).map(key => {
-            const {
-              fieldFallback,
-              fieldLoop,
-              fieldSubheadline,
-              title
-            } = data.results[key];
-            return (
-              <section key={key}>
-                <div
-                  style={{
-                    backgroundImage: `url(${backendUrl + fieldFallback})`
-                  }}
-                >
-                  <h1>{title}</h1>
-                  <h2>{fieldSubheadline}</h2>
-                  <video
-                    muted
-                    loop
-                    preload="auto"
-                    src={backendUrl + fieldLoop}
-                    autoPlay="autoplay"
+        <div className={classes.wrapper}>
+          <Slider {...settings}>
+            {Object.keys(data.results).map(key => {
+              const {
+                fieldFallback,
+                fieldLoop,
+                fieldSubheadline,
+                title
+              } = data.results[key];
+              return (
+                <section className={classes.slide} key={key}>
+                  <div
+                    style={{
+                      backgroundImage: `url(${backendUrl + fieldFallback})`
+                    }}
                   >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </section>
-            );
-          })}
-        </Slider>
+                    <h1>{title}</h1>
+                    <h2>{fieldSubheadline}</h2>
+                    <video
+                      autoPlay="autoplay"
+                      className={classes.video}
+                      loop
+                      muted
+                      preload="auto"
+                      src={backendUrl + fieldLoop}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </section>
+              );
+            })}
+          </Slider>
+        </div>
       )}
     </>
   );
 };
 
-export default HomepageComponent;
+export default withStyles(style)(HomepageComponent);
