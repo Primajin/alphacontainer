@@ -4,7 +4,7 @@ import withStyles from 'react-jss';
 import Logo from '../atoms/logo';
 
 const style = () => ({
-  Logo: {
+  logo: {
     height: 'auto',
     left: '50%',
     position: 'fixed',
@@ -15,7 +15,7 @@ const style = () => ({
 });
 
 const RootComponent = ({ classes }) => (
-  <Logo className={classes.Logo} signetOnly />
+  <Logo className={classes.logo} signetOnly />
 );
 
 export default withStyles(style)(RootComponent);
