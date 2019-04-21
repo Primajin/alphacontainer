@@ -18,11 +18,10 @@ const HomepageComponent = () => {
   const hasData = !!Object.keys(data).length;
 
   const settings = {
+    autoplay: true,
+    autoplaySpeed: 15000,
     dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    pauseOnHover: false
   };
 
   return (
