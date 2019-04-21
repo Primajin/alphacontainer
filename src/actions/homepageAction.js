@@ -8,30 +8,31 @@ const endpoint = 'node/article';
 
 export const transformApiDataForHomepage = (rawData, endpoint) => {
   const endPoint = camelCase(endpoint);
-  let transformedData = {};
+  let transformedData = undefined;
 
   if (
     rawData.hasOwnProperty('meta') &&
     rawData.meta.hasOwnProperty(endpoint) &&
     rawData.meta[endpoint].hasOwnProperty('meta')
   ) {
-    transformedData.count = rawData.meta[endpoint].meta.count;
+    transformedData = { count: rawData.meta[endpoint].meta.count };
   }
 
   if (rawData.hasOwnProperty(endPoint)) {
     const data = rawData[endPoint];
-    const results = mapValues(data, object => {
-      const loopData = object.relationships.fieldLoop.data;
+    const results = mapValues(data, item => {
+      const loopData = item.relationships.fieldLoop.data;
       let url = undefined;
 
       if (
         rawData.hasOwnProperty(loopData.type) &&
-        rawData[loopData.type].hasOwnProperty(loopData.id)
+        rawData[loopData.type].hasOwnProperty(loopData.id) &&
+        rawData[loopData.type][loopData.id].hasOwnProperty('attributes')
       ) {
         url = rawData[loopData.type][loopData.id].attributes.uri.url;
       }
 
-      return { ...object.attributes, url };
+      return { ...item.attributes, url };
     });
 
     transformedData = { ...transformedData, results };
