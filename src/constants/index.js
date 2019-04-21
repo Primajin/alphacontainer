@@ -1,3 +1,4 @@
 export * from './actionTypes';
 
-export const apiUrl = 'https://api.alphacontainer.de/1/';
+export const backendUrl = 'https://api.alphacontainer.de';
+export const apiUrl = backendUrl + '/1';

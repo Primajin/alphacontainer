@@ -21,18 +21,19 @@ export const transformApiDataForHomepage = (rawData, endpoint) => {
   if (rawData.hasOwnProperty(endPoint)) {
     const data = rawData[endPoint];
     const results = mapValues(data, item => {
-      const loopData = item.relationships.fieldLoop.data;
-      let url = undefined;
+      const urls = mapValues(item.relationships, relationship => {
+        const fileData = relationship.data;
 
-      if (
-        rawData.hasOwnProperty(loopData.type) &&
-        rawData[loopData.type].hasOwnProperty(loopData.id) &&
-        rawData[loopData.type][loopData.id].hasOwnProperty('attributes')
-      ) {
-        url = rawData[loopData.type][loopData.id].attributes.uri.url;
-      }
+        if (
+          rawData.hasOwnProperty(fileData.type) &&
+          rawData[fileData.type].hasOwnProperty(fileData.id) &&
+          rawData[fileData.type][fileData.id].hasOwnProperty('attributes')
+        ) {
+          return rawData[fileData.type][fileData.id].attributes.uri.url;
+        }
+      });
 
-      return { ...item.attributes, url };
+      return { ...item.attributes, ...urls };
     });
 
     transformedData = { ...transformedData, results };
@@ -49,9 +50,7 @@ export const getHomepageItems = dispatch => {
 
   axios
     .get(
-      apiUrl +
-        endpoint +
-        '?include=field_loop&fields%5Bnode--article%5D=title,created,field_loop,field_subheadline&fields%5Bfile--file%5D=uri,url&filter%5Bloop%5D%5Bpath%5D=field_loop.id&filter%5Bloop%5D%5Boperator%5D=%3C%3E&filter%5Bloop%5D%5Bvalue%5D=0'
+      `${apiUrl}/${endpoint}?include=field_loop,field_fallback&fields%5Bnode--article%5D=title,created,field_loop,field_subheadline,field_fallback&fields%5Bfile--file%5D=uri,url&filter%5Bloop%5D%5Bpath%5D=field_loop.id&filter%5Bloop%5D%5Boperator%5D=%3C%3E&filter%5Bloop%5D%5Bvalue%5D=0`
     )
     .then(({ data }) => {
       dispatch({
