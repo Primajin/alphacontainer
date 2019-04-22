@@ -34,6 +34,13 @@ const Menu = ({ classes }) => {
         </code>
       )}
       {error && <button onClick={handleFetch}>Retry</button>}
+      {hasData && (
+        <ul>
+          {data.map(listItem => (
+            <li>{listItem}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
