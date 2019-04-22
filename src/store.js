@@ -7,7 +7,7 @@ export const Store = React.createContext(undefined);
 export default ({ children }) => {
   // Combine reducers
   const [homepageState, homepageDispatch] = useReducer(homepageReducer, homepageInitialState);
-  const [menuState, menuDispatch] = useReducer(menuInitialState, menuReducer);
+  const [menuState, menuDispatch] = useReducer(menuReducer, menuInitialState);
 
   // Export as one store
   const store = {

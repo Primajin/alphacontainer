@@ -5,10 +5,11 @@ import Slider from 'react-slick'; // 'react-slick/lib'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { backendUrl } from 'invariables';
-import { getHomepageItems } from 'actions';
 import { Store } from 'store';
+import { getHomepageItems } from 'actions';
+import { backendUrl } from 'invariables';
 import { breakpoints } from 'theme';
+import MenuComponent from 'components/atoms/menu';
 import HeaderComponent from 'components/molecules/header';
 
 const style = ({ colors: { primary: primaryColor, background }, mediaQueries: { lg } }) => ({
@@ -64,6 +65,7 @@ const HomepageComponent = ({ classes }) => {
 
   return (
     <>
+      <MenuComponent />
       <HeaderComponent />
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
       {(hasData || error) && (
