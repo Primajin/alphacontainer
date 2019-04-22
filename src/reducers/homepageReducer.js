@@ -1,14 +1,11 @@
 import { defaultInitialState, defaultReducer, homepageActionTypes } from 'invariables';
 
-const { homeError, homeFetch, homeLoading } = homepageActionTypes;
+const { errorType, fetchType, loadingType } = homepageActionTypes;
 
-export const homepageInitialState = {
-  ...defaultInitialState
-};
-
+export const homepageInitialState = { ...defaultInitialState };
 export const homepageReducer = defaultReducer(
-  homeError,
-  homeFetch,
-  homeLoading,
+  errorType,
+  fetchType,
+  loadingType,
   homepageInitialState
 );

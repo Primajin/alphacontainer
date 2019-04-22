@@ -4,7 +4,7 @@ import { camelCase, mapValues } from 'lodash';
 
 import { apiUrl, homepageActionTypes } from 'invariables';
 
-const { homeError, homeFetch, homeLoading } = homepageActionTypes;
+const { errorType, fetchType, loadingType } = homepageActionTypes;
 const endpoint = 'node/article';
 
 export const transformApiDataForHomepage = (rawData, endpoint) => {
@@ -45,7 +45,7 @@ export const transformApiDataForHomepage = (rawData, endpoint) => {
 
 export const getHomepageItems = async dispatch => {
   dispatch({
-    type: homeLoading,
+    type: loadingType,
     payload: { loading: true }
   });
 
@@ -57,25 +57,25 @@ export const getHomepageItems = async dispatch => {
     )
     .then(({ data }) => {
       dispatch({
-        type: homeFetch,
+        type: fetchType,
         payload: {
           data: transformApiDataForHomepage(normalize(data, { endpoint }), endpoint)
         }
       });
 
       dispatch({
-        type: homeLoading,
+        type: loadingType,
         payload: { loading: false }
       });
     })
     .catch(error => {
       dispatch({
-        type: homeError,
+        type: errorType,
         payload: { error: error.message }
       });
 
       dispatch({
-        type: homeLoading,
+        type: loadingType,
         payload: { loading: false }
       });
     });

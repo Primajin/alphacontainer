@@ -1,4 +1,4 @@
 const prefix = 'HOME_';
-export const homeLoading = prefix + 'LOADING';
-export const homeError = prefix + 'ERROR';
-export const homeFetch = prefix + 'FETCH';
+export const loadingType = prefix + 'LOADING';
+export const errorType = prefix + 'ERROR';
+export const fetchType = prefix + 'FETCH';

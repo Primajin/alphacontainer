@@ -4,10 +4,8 @@ export const backendUrl = 'https://api.alphacontainer.de';
 export const apiUrl = backendUrl + '/1';
 
 export const defaultInitialState = { data: {}, error: null, loading: false };
-export const defaultReducer = (caseError, caseFetch, caseLoading, initialState) => (
-  state,
-  { type, payload }
-) => {
+// eslint-disable-next-line prettier/prettier
+export const defaultReducer = (caseError, caseFetch, caseLoading, initialState) => (state, { type, payload }) => {
   switch (type) {
     case caseError:
       return {
