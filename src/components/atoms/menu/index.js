@@ -37,7 +37,7 @@ const Menu = ({ classes }) => {
       {hasData && (
         <ul>
           {data.map(listItem => (
-            <li>{listItem}</li>
+            <li key={listItem}>{listItem}</li>
           ))}
         </ul>
       )}
