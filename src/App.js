@@ -4,7 +4,7 @@ import theme from './theme';
 import StoreProvider from './store';
 
 import RootComponent from 'components/RootComponent';
-import HomepageComponent from 'components/HomeComponent';
+import HomepageComponent from 'components/pages/homepage';
 
 const App = () => (
   <StoreProvider>

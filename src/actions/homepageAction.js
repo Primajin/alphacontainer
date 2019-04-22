@@ -2,7 +2,7 @@ import axios from 'axios';
 import normalize from 'json-api-normalizer';
 import { camelCase, mapValues } from 'lodash';
 
-import { apiUrl, homeError, homeFetch, homeLoading } from '../constants';
+import { apiUrl, homeError, homeFetch, homeLoading } from 'invariables';
 
 const endpoint = 'node/article';
 

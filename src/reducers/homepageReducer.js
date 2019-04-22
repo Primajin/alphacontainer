@@ -1,4 +1,4 @@
-import { homeError, homeFetch, homeLoading } from '../constants';
+import { homeError, homeFetch, homeLoading } from 'invariables';
 
 export const homepageInitialState = {
   loading: false,

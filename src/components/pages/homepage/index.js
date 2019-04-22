@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react';
 import withStyles from 'react-jss';
 import MediaQuery from 'react-responsive';
-import Slider from 'react-slick';
+import Slider from 'react-slick'; // 'react-slick/lib'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { backendUrl } from '../../constants';
+import { backendUrl } from 'invariables';
 import { getHomepageItems } from 'actions';
 import { Store } from 'store';
 import { breakpoints } from 'theme';
