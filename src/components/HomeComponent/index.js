@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import withStyles from 'react-jss';
 import MediaQuery from 'react-responsive';
 import Slider from 'react-slick';
@@ -45,8 +45,13 @@ const style = ({
 const HomepageComponent = ({ classes }) => {
   const [state, dispatch] = useContext(Store).homepage;
 
-  const handleFetch = () => {
+  // componentDidMount
+  useEffect(() => {
     getHomepageItems(dispatch);
+  }, []);
+
+  const handleFetch = async () => {
+    await getHomepageItems(dispatch);
   };
 
   const { loading, data, error } = state;
@@ -62,12 +67,12 @@ const HomepageComponent = ({ classes }) => {
   return (
     <>
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
-      <button onClick={handleFetch}>Fetch</button>
       {(hasData || error) && (
         <code>
           <pre>{JSON.stringify(state, null, 2)}</pre>
         </code>
       )}
+      {error && <button onClick={handleFetch}>Retry</button>}
       {hasData && parseInt(data.count) && (
         <div className={classes.wrapper}>
           <Slider {...settings}>
