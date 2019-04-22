@@ -1,7 +1,7 @@
 import React from 'react';
 import withStyles from 'react-jss';
 
-import Logo from '../atoms/logo';
+import Logo from 'components/atoms/logo';
 
 const style = () => ({
   logo: {
@@ -15,8 +15,6 @@ const style = () => ({
   }
 });
 
-const RootComponent = ({ classes }) => (
-  <Logo className={classes.logo} signetOnly />
-);
+const RootComponent = ({ classes }) => <Logo className={classes.logo} signetOnly />;
 
 export default withStyles(style)(RootComponent);

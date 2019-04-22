@@ -56,10 +56,7 @@ export const getHomepageItems = async dispatch => {
       dispatch({
         type: homeFetch,
         payload: {
-          data: transformApiDataForHomepage(
-            normalize(data, { endpoint }),
-            endpoint
-          )
+          data: transformApiDataForHomepage(normalize(data, { endpoint }), endpoint)
         }
       });
 

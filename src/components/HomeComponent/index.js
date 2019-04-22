@@ -5,15 +5,12 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import { getHomepageItems } from '../../actions/homepageAction';
-import { Store } from '../../store';
 import { backendUrl } from '../../constants';
-import { breakpoints } from '../../theme';
+import { getHomepageItems } from 'actions';
+import { Store } from 'store';
+import { breakpoints } from 'theme';
 
-const style = ({
-  colors: { primary: primaryColor, background },
-  mediaQueries: { lg }
-}) => ({
+const style = ({ colors: { primary: primaryColor, background }, mediaQueries: { lg } }) => ({
   slideBackground: {
     alignItems: 'center',
     background: 'center center / cover no-repeat',
@@ -77,12 +74,7 @@ const HomepageComponent = ({ classes }) => {
         <div className={classes.wrapper}>
           <Slider {...settings}>
             {Object.keys(data.results).map(key => {
-              const {
-                fieldFallback,
-                fieldLoop,
-                fieldSubheadline,
-                title
-              } = data.results[key];
+              const { fieldFallback, fieldLoop, fieldSubheadline, title } = data.results[key];
               return (
                 <section key={key}>
                   <div

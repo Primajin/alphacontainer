@@ -6,7 +6,7 @@ export const homepageInitialState = {
   error: null
 };
 
-export default (state, { type, payload }) => {
+export const homepageReducer = (state, { type, payload }) => {
   switch (type) {
     case homeError:
       return {
