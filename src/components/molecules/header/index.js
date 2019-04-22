@@ -15,6 +15,10 @@ const style = () => ({
   }
 });
 
-const RootComponent = ({ classes }) => <Logo className={classes.logo} signetOnly />;
+const RootComponent = ({ classes }) => (
+  <header>
+    <Logo className={classes.logo} signetOnly />
+  </header>
+);
 
 export default withStyles(style)(RootComponent);

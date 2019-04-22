@@ -9,6 +9,7 @@ import { backendUrl } from 'invariables';
 import { getHomepageItems } from 'actions';
 import { Store } from 'store';
 import { breakpoints } from 'theme';
+import HeaderComponent from 'components/molecules/header';
 
 const style = ({ colors: { primary: primaryColor, background }, mediaQueries: { lg } }) => ({
   slideBackground: {
@@ -63,6 +64,7 @@ const HomepageComponent = ({ classes }) => {
 
   return (
     <>
+      <HeaderComponent />
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
       {(hasData || error) && (
         <code>
