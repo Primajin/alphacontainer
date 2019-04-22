@@ -1,18 +1,32 @@
+import { mapValues, omit } from 'lodash';
+
+// colors
 const acpRed = '#e34142';
 const mediumGrey = '#999';
+const background = '#fff';
+
+// mediaQueries
+const xs = 575;
+const sm = 576;
+const md = 768;
+const lg = 992;
+const xl = 1200;
+
+export const breakpoints = { xs, sm, md, lg, xl };
+
+const mediaQueries = mapValues(
+  omit(breakpoints, 'xs'),
+  breakpoint => `@media (min-width: ${breakpoint}px)`
+);
+mediaQueries.xs = `@media (max-width: ${breakpoints.xs}px)`;
 
 const theme = {
-  breakpoints: {
-    xs: '@media (max-width: 575px)',
-    sm: '@media (min-width: 576px)',
-    md: '@media (min-width: 768px)',
-    lg: '@media (min-width: 992px)',
-    xl: '@media (min-width: 1200px)'
-  },
   colors: {
+    background,
     primary: acpRed,
     secondary: mediumGrey
-  }
+  },
+  mediaQueries
 };
 
 export default theme;

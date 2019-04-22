@@ -3,8 +3,8 @@ import withStyles from 'react-jss';
 import classnames from 'classnames';
 
 const style = ({
-  breakpoints: { lg },
-  colors: { primary: primaryColor, secondary: secondaryColor }
+  colors: { primary: primaryColor, secondary: secondaryColor },
+  mediaQueries: { lg }
 }) => ({
   primary: {
     fill: primaryColor

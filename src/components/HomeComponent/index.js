@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import withStyles from 'react-jss';
+import MediaQuery from 'react-responsive';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -7,12 +8,28 @@ import 'slick-carousel/slick/slick-theme.css';
 import { getHomepageItems } from '../../actions/homepageAction';
 import { Store } from '../../store';
 import { backendUrl } from '../../constants';
+import { breakpoints } from '../../theme';
 
 const style = ({
-  colors: { primary: primaryColor, secondary: secondaryColor }
+  colors: { primary: primaryColor, background },
+  mediaQueries: { lg }
 }) => ({
-  slide: {
-    color: secondaryColor
+  slideBackground: {
+    alignItems: 'center',
+    background: 'center center / cover no-repeat',
+    display: 'flex',
+    justifyContent: 'center',
+    minHeight: 800, // TODO: temp / WIP
+    position: 'relative',
+    [lg]: {
+      background: 'none!important'
+    }
+  },
+  titleWrapper: {
+    color: background,
+    position: 'absolute',
+    textAlign: 'center',
+    textShadow: '-1px 1px 2px rgba(0,0,0,0.8)'
   },
   video: {
     width: '100%'
@@ -62,24 +79,29 @@ const HomepageComponent = ({ classes }) => {
                 title
               } = data.results[key];
               return (
-                <section className={classes.slide} key={key}>
+                <section key={key}>
                   <div
+                    className={classes.slideBackground}
                     style={{
                       backgroundImage: `url(${backendUrl + fieldFallback})`
                     }}
                   >
-                    <h1>{title}</h1>
-                    <h2>{fieldSubheadline}</h2>
-                    <video
-                      autoPlay="autoplay"
-                      className={classes.video}
-                      loop
-                      muted
-                      preload="auto"
-                      src={backendUrl + fieldLoop}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
+                    <MediaQuery minWidth={breakpoints.lg}>
+                      <video
+                        autoPlay="autoplay"
+                        className={classes.video}
+                        loop
+                        muted
+                        preload="auto"
+                        src={backendUrl + fieldLoop}
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </MediaQuery>
+                    <div className={classes.titleWrapper}>
+                      <h1>{title}</h1>
+                      <h2>{fieldSubheadline}</h2>
+                    </div>
                   </div>
                 </section>
               );
