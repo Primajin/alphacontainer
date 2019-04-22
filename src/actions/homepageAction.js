@@ -2,8 +2,9 @@ import axios from 'axios';
 import normalize from 'json-api-normalizer';
 import { camelCase, mapValues } from 'lodash';
 
-import { apiUrl, homeError, homeFetch, homeLoading } from 'invariables';
+import { apiUrl, homepageActionTypes } from 'invariables';
 
+const { homeError, homeFetch, homeLoading } = homepageActionTypes;
 const endpoint = 'node/article';
 
 export const transformApiDataForHomepage = (rawData, endpoint) => {

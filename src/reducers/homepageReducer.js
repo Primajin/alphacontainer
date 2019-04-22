@@ -1,30 +1,14 @@
-import { homeError, homeFetch, homeLoading } from 'invariables';
+import { defaultInitialState, defaultReducer, homepageActionTypes } from 'invariables';
+
+const { homeError, homeFetch, homeLoading } = homepageActionTypes;
 
 export const homepageInitialState = {
-  loading: false,
-  data: {},
-  error: null
+  ...defaultInitialState
 };
 
-export const homepageReducer = (state, { type, payload }) => {
-  switch (type) {
-    case homeError:
-      return {
-        ...state,
-        ...payload
-      };
-    case homeFetch:
-      return {
-        ...state,
-        ...payload,
-        error: homepageInitialState.error
-      };
-    case homeLoading:
-      return {
-        ...state,
-        ...payload
-      };
-    default:
-      return state;
-  }
-};
+export const homepageReducer = defaultReducer(
+  homeError,
+  homeFetch,
+  homeLoading,
+  homepageInitialState
+);
