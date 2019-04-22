@@ -9,6 +9,7 @@ import { Store } from 'store';
 import { getHomepageItems } from 'actions';
 import { backendUrl } from 'invariables';
 import { breakpoints } from 'theme';
+import { dumpJson } from 'utils';
 import MenuComponent from 'components/atoms/menu';
 import HeaderComponent from 'components/molecules/header';
 
@@ -68,11 +69,7 @@ const HomepageComponent = ({ classes }) => {
       <MenuComponent />
       <HeaderComponent />
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
-      {(hasData || error) && (
-        <code>
-          <pre>{JSON.stringify(state, null, 2)}</pre>
-        </code>
-      )}
+      {(hasData || error) && dumpJson(state)}
       {error && <button onClick={handleFetch}>Retry</button>}
       {hasData && parseInt(data.count) && (
         <div className={classes.wrapper}>

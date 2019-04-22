@@ -3,6 +3,7 @@ import withStyles from 'react-jss';
 
 import { Store } from 'store';
 import { getMenuItems } from 'actions';
+import { dumpJson } from 'utils';
 
 const style = ({ colors: { primary: primaryColor } }) => ({
   wrapper: {
@@ -28,11 +29,7 @@ const Menu = ({ classes }) => {
   return (
     <div className={classes.wrapper}>
       <h2>Loading: {loading ? 'yes...' : 'done'}</h2>
-      {(hasData || error) && (
-        <code>
-          <pre>{JSON.stringify(state, null, 2)}</pre>
-        </code>
-      )}
+      {(hasData || error) && dumpJson(state)}
       {error && <button onClick={handleFetch}>Retry</button>}
       {hasData && (
         <ul>
