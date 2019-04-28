@@ -1,7 +1,7 @@
 import { mapValues, omit } from 'lodash';
 
 // colors
-const acpRed = '#e34142';
+const acpRed = '#e42621';
 const mediumGrey = '#999';
 const background = '#fff';
 
