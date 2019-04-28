@@ -1,6 +1,8 @@
 @import 'variables';
 
 .details-tabs {
+  margin-bottom: 20px;
+
   .tablinks {
     border: 1px solid $border-color-light;
     border-left: 0;
@@ -13,9 +15,27 @@
       display: inline-block;
       margin: 5px;
       padding: 5px 10px;
+      position: relative;
+
+      &::after {
+        border-color: transparent transparent currentColor transparent;
+        border-style: solid;
+        border-width: 0 2.5px 2.5px 2.5px;
+        content: "";
+        height: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(5px, -50%);
+        width: 0;
+      }
 
       &.active {
-        color: $primary
+        color: $primary;
+
+        &::after {
+          border-color: currentColor transparent transparent transparent;
+          border-width: 2.5px 2.5px 0 2.5px;
+        }
       }
 
       &:first-child {
@@ -26,8 +46,7 @@
 
   //Style the tab content
   .tabcontent {
-    border: 1px solid $border-color-light;
-    border-top: 0;
+    box-shadow: nth($material-shadows, 2);
     display: none;
     padding: 6px 12px;
 
