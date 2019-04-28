@@ -117,11 +117,11 @@
         }
       });
 
-      $(window).load(function () {
+      $(window).on('load', function () {
         // Execute code once the window is fully loaded.
       });
 
-      $(window).resize(function () {
+      $(window).on('resize', function () {
         // Execute code when the window is resized.
 
         if ($(window).width() > 992) {

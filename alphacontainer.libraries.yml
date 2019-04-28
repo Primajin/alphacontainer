@@ -19,7 +19,7 @@ global:
     js/modernizr.js: {}
     js/lightbox.min.js: {}
     js/owl.carousel.min.js: {}
-    js/jquery.dotdotdot.min.js: {}
+    js/jquery.dotdotdot.js: {}
     js/build/scripts.js: {}
   dependencies:
     - core/drupal

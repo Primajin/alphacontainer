@@ -109,56 +109,68 @@
   }
 }
 
-.owl-dots {
-  bottom: 90px;
-  left: 50%;
-  position: fixed;
-  transform: translateX(-50%);
-}
-
-.owl-theme .owl-nav [class*=owl-] {
-  background: transparent;
-  color: $white;
-  font: 4rem $container-font;
-  position: fixed;
-  top: 50%;
-
-  @include breakpoint(lg) {
-    font-size: 8rem;
-  }
-
-  &:hover {
+.owl-theme {
+  .owl-nav button[class*=owl-] {
     background: transparent;
-    color: $acp-red;
+    color: $white;
+    font: 4rem $container-font;
+    position: fixed;
+    top: 50%;
+
+    @include breakpoint(lg) {
+      font-size: 8rem;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $acp-red;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
-}
 
-.owl-prev {
-  left: 8%;
-  text-shadow: 1px -1px 2px rgba($black, .8);
-  transform: translateY(-50%) rotate(90deg);
+  .owl-prev {
+    left: 8%;
+    text-shadow: 1px -1px 2px rgba($black, .8);
+    transform: translateY(-50%) rotate(90deg);
 
-  @include breakpoint(lg) {
-    left: 15%;
+    @include breakpoint(lg) {
+      left: 15%;
+    }
   }
-}
 
-.owl-next {
-  right: 8%;
-  text-shadow: $text-shadow;
-  transform: translateY(-50%) rotate(-90deg);
+  .owl-next {
+    right: 8%;
+    text-shadow: $text-shadow;
+    transform: translateY(-50%) rotate(-90deg);
 
-  @include breakpoint(lg) {
-    right: 15%;
+    @include breakpoint(lg) {
+      right: 15%;
+    }
   }
-}
 
-.owl-theme .owl-dots .owl-dot span {
-  background: $white;
-  box-shadow: 0 0 2px rgba($black, .8);
-}
+  .owl-dots {
+    bottom: 90px;
+    left: 50%;
+    position: fixed;
+    transform: translateX(-50%);
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-  background: $acp-red;
+    .owl-dot {
+      span {
+        background: $white;
+        box-shadow: 0 0 2px rgba($black, .8);
+      }
+
+      &.active span,
+      &:hover span {
+        background: $acp-red;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }
