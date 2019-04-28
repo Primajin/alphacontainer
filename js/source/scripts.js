@@ -115,6 +115,11 @@
             });
           });
         }
+
+        var $contactForm = $('.contact-message-form');
+        if ($contactForm.length) {
+          $('#content').append($contactForm);
+        }
       });
 
       $(window).on('load', function () {
