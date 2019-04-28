@@ -45,7 +45,7 @@ h1 {
 }
 
 h2 {
-  color: $acp-red;
+  color: $primary;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -67,7 +67,7 @@ a {
   &:active,
   &.active,
   &.is-active {
-    color: $acp-red;
+    color: $primary;
   }
 }
 

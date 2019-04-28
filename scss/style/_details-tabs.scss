@@ -2,15 +2,34 @@
 
 .details-tabs {
   .tablinks {
-    background: $border-color;
+    border: 1px solid $border-color-light;
+    border-left: 0;
+    border-right: 0;
+    user-select: none;
+
+    div {
+      border-left: 1px solid $border-color-light;
+      cursor: pointer;
+      display: inline-block;
+      margin: 5px;
+      padding: 5px 10px;
+
+      &.active {
+        color: $primary
+      }
+
+      &:first-child {
+        border-left: 0;
+      }
+    }
   }
 
   //Style the tab content
   .tabcontent {
+    border: 1px solid $border-color-light;
+    border-top: 0;
     display: none;
     padding: 6px 12px;
-    border: 1px solid $border-color;
-    border-top: none;
 
     &.active {
       display: block;

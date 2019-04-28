@@ -2,8 +2,11 @@
 $black: #000;
 $white: #fff;
 $acp-red: #e42621;
+$primary: $acp-red;
 $gray: #999;
+$gray-light: #efefef;
 $border-color: $gray;
+$border-color-light: $gray-light;
 
 //Container Font
 $container-font: FFContainerRegular, sans-serif;
@@ -27,15 +30,15 @@ $header-height-lg: 70px;
 //breakpoints
 $grid-breakpoints: (
   // Extra small screen / phone
-    xs: 0,
+  xs: 0,
   // Small screen / phone
-    sm: 544px,
+  sm: 544px,
   // Medium screen / tablet
-    md: 768px,
+  md: 768px,
   // Large screen / desktop
-    lg: 992px,
+  lg: 992px,
   // Extra large screen / wide desktop
-    xl: 1200px
+  xl: 1200px
 ) !default;
 
 $screen-xs-max: map-get($grid-breakpoints, sm) - 1;

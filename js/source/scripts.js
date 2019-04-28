@@ -124,12 +124,20 @@
 
         var $detailsTabs = $('.details-tabs');
         if ($detailsTabs.length) {
-          $detailsTabs.each(function(){
+          $detailsTabs.each(function() {
             var $detailTab = $(this);
-            var $tabLinks = $detailTab.find('.tablinks span');
+            var $tabLinks = $detailTab.find('.tablinks div');
+            var $tabcontents = $detailTab.find('.tabcontent');
             $tabLinks.each(function(index) {
-              $(this).on('click', function() {
-                $detailTab.find('.tabcontent').removeClass('active').eq(index).addClass('active');
+              var $this = $(this);
+              $this.on('click', function() {
+                if ($this.hasClass('active')) {
+                  $tabLinks.removeClass('active');
+                  $tabcontents.removeClass('active');
+                } else {
+                  $tabLinks.removeClass('active').eq(index).addClass('active');
+                  $tabcontents.removeClass('active').eq(index).addClass('active');
+                }
               });
             });
           });

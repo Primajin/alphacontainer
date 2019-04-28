@@ -57,7 +57,7 @@ body {
   }
 
   svg {
-    fill: $acp-red;
+    fill: $primary;
   }
 }
 
@@ -86,7 +86,7 @@ body {
     display: block;
 
     &:first-child {
-      color: $acp-red;
+      color: $primary;
     }
 
     &:nth-child(2) {

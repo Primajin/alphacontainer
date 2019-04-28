@@ -41,7 +41,7 @@
     &:last-child {
       border-bottom: 1px solid $border-color;
       bottom: 0;
-      color: $acp-red;
+      color: $primary;
       font-size: 1.8rem;
       font-weight: normal;
       position: absolute;
@@ -53,7 +53,7 @@
 
       &::after {
         background-size: 13px;
-        color: $acp-red;
+        color: $primary;
         content: 'V';
         display: inline-block;
         font-family: $container-font;
@@ -68,7 +68,7 @@
   }
 
   time {
-    color: $acp-red;
+    color: $primary;
     display: block;
     font-size: 1.4rem;
     margin-bottom: 5px;

@@ -123,7 +123,7 @@
 
     &:hover {
       background: transparent;
-      color: $acp-red;
+      color: $primary;
     }
 
     &:focus {
@@ -165,7 +165,7 @@
 
       &.active span,
       &:hover span {
-        background: $acp-red;
+        background: $primary;
       }
 
       &:focus {
