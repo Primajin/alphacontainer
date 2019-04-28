@@ -20,6 +20,7 @@
 
       $(document).ready(function() {
         // Execute code once the DOM is ready.
+        var $content = $('#content');
         var $owlCarousel = $('.owl-carousel');
         var $videos = $owlCarousel.find('video');
 
@@ -119,7 +120,7 @@
 
         var $contactForm = $('.contact-message-form');
         if ($contactForm.length) {
-          $('#content').append($contactForm);
+          $content.append($contactForm);
         }
 
         var $detailsTabs = $('.details-tabs');
@@ -142,6 +143,23 @@
             });
           });
         }
+
+        var $fakeTags = $content.find('[data-tag]');
+        if ($fakeTags.length) {
+          $fakeTags.each(function() {
+            var $this = $(this);
+            var tag = $this.attr('data-tag');
+            // var contents = $this.contents().length && $this.contents().html();
+            // var newTag = $('<' + tag + '>' + contents + '</' + tag + '>');
+            var newTag = $('<' + tag + '>');
+            $.each(this.attributes, function(index, attribute) {
+              newTag.attr(attribute.name, attribute.value);
+            });
+
+            $this.replaceWith(newTag);
+          });
+        }
+
       });
 
       $(window).on('load', function() {
