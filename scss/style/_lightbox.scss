@@ -1,0 +1,26 @@
+//overwrite lightbox frame
+.lb-outerContainer {
+  background-color: transparent;
+}
+
+.lb-data .lb-close {
+  background: transparent url('../../images/optimized/close.svg') center center no-repeat;
+}
+
+.lb-nav a.lb-next {
+  background: transparent url('../../images/optimized/next.svg') 95% 49% no-repeat;
+}
+
+.lb-nav a.lb-prev {
+  background: transparent url('../../images/optimized/prev.svg') 9% 49% no-repeat;
+}
+
+.lb-nav a.lb-next,
+.lb-nav a.lb-prev {
+  background-size: 50px 45px;
+  filter: drop-shadow(0 3px 6px transparentize($black, .5));
+}
+
+.lb-cancel {
+  background: transparent url('../../images/optimized/loading.gif') center center no-repeat;
+}
