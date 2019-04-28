@@ -3,7 +3,7 @@
 
 .content {
   display: flex;
-  //font-size: 0;
+  font-size: $font-size-base;
 
   + article {
     display: none;
