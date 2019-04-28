@@ -122,15 +122,15 @@
           $('#content').append($contactForm);
         }
 
-        var $detailsTabs = $('.details-tabs').find('details');
+        var $detailsTabs = $('.details-tabs');
         if ($detailsTabs.length) {
-          $detailsTabs.each(function() {
-            var $this = $(this);
-            $this.on('click', function() {
-              $detailsTabs.attr('open', false);
-              setTimeout(function() {
-                $this.attr('open', true);
-              }, 1);
+          $detailsTabs.each(function(){
+            var $detailTab = $(this);
+            var $tabLinks = $detailTab.find('.tablinks span');
+            $tabLinks.each(function(index) {
+              $(this).on('click', function() {
+                $detailTab.find('.tabcontent').removeClass('active').eq(index).addClass('active');
+              });
             });
           });
         }
