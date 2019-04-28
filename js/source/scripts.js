@@ -10,20 +10,20 @@
 // wrapping it with an "anonymous closure". See:
 // - https://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-(function ($, Drupal, window, document) {
+(function($, Drupal, window, document) {
 
   // To understand behaviors, see https://drupal.org/node/756722#behaviors
   Drupal.behaviors.alphacontainer = {
-    attach: function (context, settings) {
+    attach: function(context, settings) {
       // var $document = $(document);
       // var $body = $(document.body);
 
-      $(document).ready(function () {
+      $(document).ready(function() {
         // Execute code once the DOM is ready.
         var $owlCarousel = $('.owl-carousel');
         var $videos = $owlCarousel.find('video');
 
-        $videos.each(function () {
+        $videos.each(function() {
           var $this = $(this);
           var $container = $this.parent();
           var fallbackUrl = $container.find('span').text().trim();
@@ -34,11 +34,11 @@
 
         if ($(window).width() > 992) {
           $videos.attr({'autoplay': true, 'preload': 'auto'});
-          $videos.each(function () {
+          $videos.each(function() {
             var waitTime = 150;
             var _this = this;
 
-            setTimeout(function () {
+            setTimeout(function() {
               // Resume play if the element is paused.
               if (_this.paused) {
                 _this.play();
@@ -50,12 +50,13 @@
         if (!$('#burger').length) {
           var header = $('#header');
           var navi = $('#navigation');
-          var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
-          burger.on('click', function () {
+          var burger = $(
+              '<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
+          burger.on('click', function() {
             navi.toggleClass('open');
           });
 
-          header.prepend(burger)
+          header.prepend(burger);
         }
 
         /* owl.on('initialized.owl.carousel resized.owl.carousel changed.owl.carousel', function (event) {
@@ -82,11 +83,11 @@
         if ($overviewPage.length) {
           var $items = $overviewPage.find('.item');
 
-          $items.each(function () {
+          $items.each(function() {
             var $that = $(this),
-              link = $that.find('a').attr('href');
+                link = $that.find('a').attr('href');
 
-            $that.on('click', function () {
+            $that.on('click', function() {
               if ($(window).width() < 1025) {
                 if ($that.hasClass('active')) {
                   window.location.href = link;
@@ -104,12 +105,12 @@
 
         var $newsItems = $('.news').find('div');
         if ($newsItems.length) {
-          $newsItems.each(function () {
+          $newsItems.each(function() {
             var $this = $(this);
             $this.dotdotdot({
-              after: "span.readmore",
-              watch: "window",
-              callback: function () {
+              after: 'span.readmore',
+              watch: 'window',
+              callback: function() {
                 $this.addClass('done');
               }
             });
@@ -120,22 +121,35 @@
         if ($contactForm.length) {
           $('#content').append($contactForm);
         }
+
+        var $detailsTabs = $('.details-tabs').find('details');
+        if ($detailsTabs.length) {
+          $detailsTabs.each(function() {
+            var $this = $(this);
+            $this.on('click', function() {
+              $detailsTabs.attr('open', false);
+              setTimeout(function() {
+                $this.attr('open', true);
+              }, 1);
+            });
+          });
+        }
       });
 
-      $(window).on('load', function () {
+      $(window).on('load', function() {
         // Execute code once the window is fully loaded.
       });
 
-      $(window).on('resize', function () {
+      $(window).on('resize', function() {
         // Execute code when the window is resized.
 
         if ($(window).width() > 992) {
           var videos = $('.owl-carousel').find('video');
           videos.attr({'autoplay': true, 'preload': 'auto'});
-          videos.each(function () {
+          videos.each(function() {
             var waitTime = 150;
             var _this = this;
-            setTimeout(function () {
+            setTimeout(function() {
               // Resume play if the element is paused.
               if (_this.paused) {
                 _this.play();
@@ -147,12 +161,13 @@
         if (!$('#burger').length) {
           var header = $('#header');
           var navi = $('#navigation');
-          var burger = $('<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
-          burger.on('click', function () {
+          var burger = $(
+              '<svg xmlns="http://www.w3.org/2000/svg" id="burger" class="hidden-lg" viewBox="0 0 27 16"><style>.st0{fill:none;stroke:#cd3333;}</style><path d="M0 .5h27m-27 5h27m-27 5h27m-27 5h27" class="st0"/></svg>');
+          burger.on('click', function() {
             navi.toggleClass('open');
           });
 
-          header.prepend(burger)
+          header.prepend(burger);
         }
       });
 
