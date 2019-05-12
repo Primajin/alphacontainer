@@ -77,4 +77,9 @@ form, label, input, textarea {
       text-transform: uppercase;
     }
   }
+
+  .fineprint {
+    color: $border-color;
+    font-size: 75%;
+  }
 }
