@@ -2,5 +2,79 @@
 //@import 'mixins';
 
 form, label, input, textarea {
+  font: $standard-font;
   font-size: $font-size-base;
+}
+
+.contact-message-form {
+  label {
+    text-transform: uppercase;
+
+    &:not(.option) {
+      display: none;
+    }
+  }
+
+  input, textarea {
+    background: $form-fields;
+    border: 0;
+    border-bottom: 1px solid $border-color;
+    min-height: 50px;
+    padding: 20px 5px 5px;
+    transition: border-bottom-color $transition-standard;
+
+    &:focus {
+      border-bottom-color: $primary;
+      outline: none;
+    }
+
+    &.filled, &:focus {
+      ~ .placeholder {
+        font-size: 75%;
+        top: 5px;
+      }
+    }
+
+    &[required] {
+      ~ .placeholder {
+        &::after {
+          content: "*";
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    min-height: initial;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .form-item {
+    margin-bottom: 1rem;
+    position: relative;
+
+    .placeholder {
+      color: $border-color;
+      left: 5px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 15px;
+      transition: font-size $transition-fast, top $transition-fast;
+      user-select: none;
+    }
+  }
+
+  input {
+    &[type="submit"], &[type="button"] {
+      background: transparent;
+      border: 0;
+      font-weight: bold;
+      min-height: initial;
+      padding: 5px;
+      text-transform: uppercase;
+    }
+  }
 }

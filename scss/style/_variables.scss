@@ -7,9 +7,11 @@ $gray: #999;
 $gray-light: #efefef;
 $border-color: $gray;
 $border-color-light: $gray-light;
+$form-fields: $gray-light;
 
-//Container Font
+//font
 $container-font: FFContainerRegular, sans-serif;
+$standard-font: 400 10px 'DINNextLTPro-Regular', sans-serif;
 
 //font-sizes
 $font-size-base: 1.4rem;
@@ -49,6 +51,7 @@ $screen-xl-min: map-get($grid-breakpoints, xl);
 
 //transitions
 $transition-standard: .33s linear;
+$transition-fast: .166s linear;
 
 //text-shadow
 $text-shadow: -1px 1px 2px rgba($black, .8);
