@@ -1,0 +1,21 @@
+@import 'variables';
+
+.owl-theme {
+  .owl-dots {
+    .owl-dot {
+      span {
+        background: $white;
+        box-shadow: 0 0 2px rgba($black, .8);
+      }
+
+      &.active span,
+      &:hover span {
+        background: $primary;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

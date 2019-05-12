@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixins';
+
 .section-anni-dunkelmann {
   [data-drupal-selector="edit-preview"],
   .content article + aside {
@@ -7,5 +10,13 @@
   h1, h2, h3 {
     margin: 0.5em 0 1em;
     text-transform: uppercase;
+  }
+
+  .owl-carousel {
+    margin: 0 auto;
+
+    @include breakpoint(lg) {
+      width: 500px;
+    }
   }
 }
