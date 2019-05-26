@@ -84,6 +84,8 @@
           $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
           $('.owl-next').attr('title', isFrontpage ? 'nächstes Video' : 'nächstes Bild');
 
+          $('textarea').autogrow({vertical: true, horizontal: false});
+
           var $overviewPage = $('.overview-page');
           if ($overviewPage.length) {
             var $items = $overviewPage.find('.item');
