@@ -39,7 +39,7 @@ form, label, input, textarea {
       border-bottom-color: $primary;
     }
 
-    &.filled, &:focus {
+    &.filled, &:focus, &:not(:empty) {
       ~ .placeholder {
         font-size: 75%;
         top: 5px;
