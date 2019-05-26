@@ -22,6 +22,7 @@ form, label, input, textarea {
     min-height: 50px;
     padding: 20px 5px 5px;
     transition: border-bottom-color $transition-standard;
+    width: 100%;
 
     &:focus {
       border-bottom-color: $primary;
@@ -46,6 +47,7 @@ form, label, input, textarea {
 
   input[type="checkbox"] {
     min-height: initial;
+    width: initial;
   }
 
   textarea {
@@ -75,6 +77,7 @@ form, label, input, textarea {
       min-height: initial;
       padding: 5px;
       text-transform: uppercase;
+      width: initial;
     }
   }
 

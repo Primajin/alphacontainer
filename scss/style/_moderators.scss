@@ -3,13 +3,21 @@
 
 .section-anni-dunkelmann {
   [data-drupal-selector="edit-preview"],
-  .content article + aside {
-    display: none;
+  .content article {
+    width: 100%;
+
+    + aside {
+      display: none;
+    }
   }
 
   h1, h2, h3 {
     margin: 0.5em 0 1em;
     text-transform: uppercase;
+  }
+
+  video, iframe, article {
+    max-width: 100%;
   }
 
   .owl-carousel {
