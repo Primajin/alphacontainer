@@ -20,6 +20,7 @@ global:
     js/lightbox.min.js: {}
     js/owl.carousel.min.js: {}
     js/jquery.dotdotdot.js: {}
+    js/jquery.ns-autogrow.min.js: {}
     js/build/scripts.js: {}
   dependencies:
     - core/drupal

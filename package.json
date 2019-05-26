@@ -14,6 +14,7 @@
     "grunt-notify": "^0.4.5",
     "grunt-sass": "^3.0.2",
     "grunt-svgmin": "^6.0.0",
+    "jquery.ns-autogrow": "^1.1.6",
     "lightbox2": "^2.11.0",
     "owl.carousel": "^2.3.4"
   },
