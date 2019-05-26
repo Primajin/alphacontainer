@@ -78,7 +78,7 @@
             loop: true,
             margin: 0,
             nav: true,
-            navText: isFrontpage ? ['V', 'V'] : ['⭠','⭢']
+            navText: isFrontpage ? ['V', 'V'] : ['⭠', '⭢']
           });
 
           $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
@@ -160,6 +160,7 @@
               var $detailTab = $(this);
               var $tabLinks = $detailTab.find('.tablinks div');
               var $tabcontents = $detailTab.find('.tabcontent');
+
               $tabLinks.each(function(index) {
                 var $this = $(this);
                 $this.on('click', function() {
@@ -172,6 +173,12 @@
                   }
                 });
               });
+
+              var closeButton = $('<p class="close">Schließen</p>');
+              closeButton.on('click', function() {
+                $(this).parents('.details-tabs').find('.active').click();
+              });
+              $tabcontents.append(closeButton);
             });
           }
 

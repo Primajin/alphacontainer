@@ -55,4 +55,15 @@
       display: block;
     }
   }
+
+  .close {
+    color: $gray;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: right;
+
+    &::before {
+      content: "✕ ";
+    }
+  }
 }
