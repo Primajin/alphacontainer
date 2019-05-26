@@ -141,6 +141,13 @@
       left: 50%;
       position: fixed;
       transform: translateX(-50%);
+
+      .owl-dot {
+        span {
+          height: 10px;
+          width: 10px;
+        }
+      }
     }
   }
 }

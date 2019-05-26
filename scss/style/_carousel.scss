@@ -34,6 +34,8 @@
       span {
         background: $white;
         box-shadow: 0 0 2px rgba($black, .8);
+        height: 8px;
+        width: 8px;
       }
 
       &.active span,
