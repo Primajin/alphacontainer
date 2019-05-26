@@ -113,6 +113,10 @@
       font: 4rem $container-font;
       margin-top: 0;
       position: fixed;
+
+      @include breakpoint(lg) {
+        font-size: 8rem;
+      }
     }
 
     .owl-prev {

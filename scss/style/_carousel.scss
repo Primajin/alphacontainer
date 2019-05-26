@@ -8,10 +8,6 @@
     position: absolute;
     top: 50%;
 
-    @include breakpoint(lg) {
-      font-size: 8rem;
-    }
-
     &:hover {
       background: transparent;
       color: $primary;

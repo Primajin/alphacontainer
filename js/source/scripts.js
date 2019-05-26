@@ -78,7 +78,7 @@
             loop: true,
             margin: 0,
             nav: true,
-            navText: isFrontpage ? ['V', 'V'] : ['←', '→']
+            navText: isFrontpage ? ['V', 'V'] : ['⭠','⭢']
           });
 
           $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
