@@ -150,9 +150,9 @@
 
             var $sendButton = $contactForm.find('input[type="submit"]');
             if ($sendButton.length) {
-              $sendButton.eq(0).attr('value', $sendButton.attr('value') + ' →');
+              $sendButton.eq(0).attr('value', 'Abschicken ⭢');
               $sendButton.eq(0).after(
-                  '<p class="fineprint">Durch Angabe meiner E-Mail-Adresse und Anklicken des Buttons „Nachricht senden“ erkläre ich mich damit einverstanden, dass die Alpha Container Pictures GmbH mir Informationen zu meiner Angebotsanfrage per E-Mail zuschickt. Meine Einwilligung kann ich jederzeit gegenüber der Alpha Container GmbH widerrufen.</p>');
+                  '<p class="fineprint">Durch Angabe meiner E-Mail-Adresse und Anklicken des Buttons „Abschicken“ erkläre ich mich damit einverstanden, dass die Alpha Container Pictures GmbH mir Informationen zu meiner Angebotsanfrage per E-Mail zuschickt. Meine Einwilligung kann ich jederzeit gegenüber der Alpha Container GmbH widerrufen.</p>');
             }
           }
 

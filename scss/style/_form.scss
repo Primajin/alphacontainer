@@ -15,18 +15,28 @@ form, label, input, textarea {
     }
   }
 
+  [data-drupal-selector="edit-preview"] {
+    display: none;
+  }
+
   input, textarea {
     background: $form-fields;
     border: 0;
     border-bottom: 1px solid $border-color;
     min-height: 50px;
+    outline: none;
     padding: 20px 5px 5px;
+    text-transform: uppercase;
     transition: border-bottom-color $transition-standard;
     width: 100%;
 
     &:focus {
-      border-bottom-color: $primary;
+      border-bottom-color: $black;
       outline: none;
+    }
+
+    &:invalid {
+      border-bottom-color: $primary;
     }
 
     &.filled, &:focus {
@@ -52,6 +62,14 @@ form, label, input, textarea {
 
   textarea {
     resize: vertical;
+
+    &:invalid {
+      border-bottom-color: $border-color;
+
+      &:focus {
+        border-bottom-color: $black;
+      }
+    }
   }
 
   .form-item {
@@ -76,7 +94,6 @@ form, label, input, textarea {
       font-weight: bold;
       min-height: initial;
       padding: 5px;
-      text-transform: uppercase;
       width: initial;
     }
   }
