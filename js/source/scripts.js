@@ -168,10 +168,10 @@
                 $this.on('click', function() {
                   if ($this.hasClass('active')) {
                     $tabLinks.removeClass('active');
-                    $tabcontents.removeClass('active');
+                    $tabcontents.slideUp();
                   } else {
                     $tabLinks.removeClass('active').eq(index).addClass('active');
-                    $tabcontents.removeClass('active').eq(index).addClass('active');
+                    $tabcontents.slideUp().eq(index).slideDown();
                   }
                 });
               });
