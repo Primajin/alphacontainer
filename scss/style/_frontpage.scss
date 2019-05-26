@@ -115,6 +115,22 @@
       position: fixed;
     }
 
+    .owl-prev {
+      transform: translateY(-50%) rotate(90deg);
+
+      @include breakpoint(lg) {
+        left: 15%;
+      }
+    }
+
+    .owl-next {
+      transform: translateY(-50%) rotate(-90deg);
+
+      @include breakpoint(lg) {
+        right: 15%;
+      }
+    }
+
     .owl-dots {
       bottom: 90px;
       left: 50%;

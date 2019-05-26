@@ -69,6 +69,7 @@
            }
            });*/
 
+          var isFrontpage = document.body.classList.contains('homepage');
           $owlCarousel.owlCarousel({
             autoplay: true,
             autoplayTimeout: 15000,
@@ -77,11 +78,11 @@
             loop: true,
             margin: 0,
             nav: true,
-            navText: ['V', 'V']
+            navText: isFrontpage ? ['V', 'V'] : ['←', '→']
           });
 
-          $('.owl-prev').attr('title', 'vorheriges Video');
-          $('.owl-next').attr('title', 'nächstes Video');
+          $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
+          $('.owl-next').attr('title', isFrontpage ? 'nächstes Video' : 'nächstes Bild');
 
           var $overviewPage = $('.overview-page');
           if ($overviewPage.length) {

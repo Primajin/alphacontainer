@@ -25,21 +25,13 @@
   .owl-prev {
     left: 8%;
     text-shadow: 1px -1px 2px rgba($black, .8);
-    transform: translateY(-50%) rotate(90deg);
-
-    @include breakpoint(lg) {
-      left: 15%;
-    }
+    transform: translateY(-50%);
   }
 
   .owl-next {
     right: 8%;
     text-shadow: $text-shadow;
-    transform: translateY(-50%) rotate(-90deg);
-
-    @include breakpoint(lg) {
-      right: 15%;
-    }
+    transform: translateY(-50%);
   }
 
   .owl-dots {
