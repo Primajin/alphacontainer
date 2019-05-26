@@ -66,9 +66,14 @@
     cursor: pointer;
     text-transform: uppercase;
     text-align: right;
+    transition: color $transition-fast;
 
     &::before {
       content: "✕ ";
+    }
+
+    &:hover {
+      color: $gray-medium;
     }
   }
 }
