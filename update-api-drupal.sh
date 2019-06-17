@@ -8,7 +8,7 @@ LIGHTGREEN='\033[1;32m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 USER=$(whoami)
-USERDB="${USER}.sql.xz"
+USERDB="${USER}_api.sql.xz"
 
 function fail {
   printf "${RED}$1${NC}\n"
