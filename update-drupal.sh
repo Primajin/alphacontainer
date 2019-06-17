@@ -50,7 +50,7 @@ then
 fi
 success "Download of ${LIGHTGREEN}${filename}${GREEN} was successful"
 
-announce "Backing up database ${USER} into ${USER}.sql.xz"
+announce "Backing up database ${USER} into ${USERDB}"
 mysqldump $USER | xz > ~/$USERDB || fail "Sorry, I could not backup your precious data!"
 success "Backup was successful"
 
