@@ -25,8 +25,8 @@ function success {
 
 printf "Let's update ${BLUE}Drupal${NC}!\n"
 printf "Don't worry we will backup the database ${BLUE}${USER}${NC} before applying the update!\n"
-announce "Going to ~/html/"
-cd ~/html/ || fail "Sorry, I can't go to the html directory!"
+announce "Going to ~/api"
+cd ~/api || fail "Sorry, I can't go to the api directory!"
 
 echo "Please enter the minor and patch version, separated with a dot."
 printf "So for Drupal 8.${GREEN}5.13${NC} just enter ${GREEN}5.13${NC}\n"
@@ -59,6 +59,9 @@ set +e # allow errors
 tar -xzf $filename --strip-components=1
 set -e # exit when any command fails
 success "Extracting was probably successful, don't mind the errors ¯\_(^_^)_/¯"
+
+announce "Adding RewriteBase to .htaccess"
+echo "RewriteBase /" >> .htaccess
 
 echo "Remove downloaded file again? It's not needed anymore."
 
