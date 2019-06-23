@@ -200,6 +200,11 @@
             });
           }
 
+          var $broadcastSchedule = $('#block-views-block-news-broadcast-dates, #block-views-block-news-aired-dates');
+          if ($broadcastSchedule.length) {
+            $broadcastSchedule.prependTo('aside');
+          }
+
         } // executed
       });// ready
 

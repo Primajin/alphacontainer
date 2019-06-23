@@ -101,13 +101,13 @@
     #content-area > div {
       position: relative;
     }
-  }
 
-  #block-views-block-news-broadcast-dates,
-  #block-views-block-news-aired-dates {
-    clear: both;
-    float: right;
-    width: 30%;
+    #block-views-block-news-broadcast-dates,
+    #block-views-block-news-aired-dates {
+      clear: both;
+      float: right;
+      width: 30%;
+    }
   }
 
   #block-views-block-news-news {
@@ -121,4 +121,10 @@
 
 .block-views-blocknews-broadcast-dates h2 {
   @extend %aside-h2;
+
+  &:first-of-type {
+    border: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
