@@ -44,3 +44,23 @@
     }
   }
 }
+
+@mixin aside-h2-single {
+  border-top: 1px solid $border-color;
+  color: $black;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 20px 0;
+  padding: 20px 0 0;
+  text-transform: uppercase;
+}
+
+@mixin aside-h2 {
+  @include aside-h2-single();
+
+  &:first-of-type {
+    border: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

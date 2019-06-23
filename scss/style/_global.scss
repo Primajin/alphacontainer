@@ -1,10 +1,8 @@
 @import 'variables';
 @import 'mixins';
 
-@font-face {font-family: 'DINNextLTPro-Regular';src: url('din-next-regular/386AD0_0_0.eot');src: url('din-next-regular/386AD0_0_0.eot?#iefix') format('embedded-opentype'),url('din-next-regular/386AD0_0_0.woff2') format('woff2'),url('din-next-regular/386AD0_0_0.woff') format('woff'),url('din-next-regular/386AD0_0_0.ttf') format('truetype');}
-
 html {
-  font: $standard-font;
+  font: $font-standard;
 }
 
 body {
@@ -34,9 +32,8 @@ p {
   }
 }
 
-h1,
-h3 {
-  font-weight: 700;
+h1, h2, h3, h4, h5, h6 {
+  font: $font-headline;
 }
 
 h1 {

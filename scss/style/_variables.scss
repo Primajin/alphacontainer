@@ -11,8 +11,12 @@ $border-color-light: $gray-light;
 $form-fields: $gray-light;
 
 //font
-$container-font: FFContainerRegular, sans-serif;
-$standard-font: 400 10px 'DINNextLTPro-Regular', sans-serif;
+$font-family-container: 'FFContainerStdRegular', sans-serif;
+$font-family-standard: 'DINNextLTPro-Light', sans-serif;
+$font-family-headline: 'DINNextLTPro-Regular', sans-serif;
+$font-container: $font-family-container;
+$font-standard: 200 10px $font-family-standard;
+$font-headline: 400 14px $font-family-headline;
 
 //font-sizes
 $font-size-base: 1.4rem;
@@ -97,14 +101,3 @@ $menu-background: transparentize($white, .15);
 
 //footer
 $footer-height: 60px;
-
-%aside-h2 {
-  border-top: 1px solid $border-color;
-  color: $black;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 2rem;
-  margin: 20px 0;
-  padding: 20px 0 0;
-  text-transform: uppercase;
-}

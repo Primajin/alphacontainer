@@ -86,5 +86,9 @@
 
   a {
     text-decoration: none;
+
+    ~ a {
+      font-family: $font-family-standard;
+    }
   }
 }

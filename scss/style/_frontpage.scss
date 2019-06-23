@@ -76,14 +76,13 @@
     .title {
       color: $white;
       display: block;
+      font: $font-headline;
       font-size: 2rem;
-      font-weight: 700;
       height: auto;
       left: 50%;
       position: absolute;
       text-align: center;
       text-shadow: $text-shadow;
-      //text-transform: uppercase;
       top: 50%;
       transform: translate(-50%, -50%);
       width: 50%;
@@ -100,8 +99,8 @@
         display: block;
         text-decoration: none;
 
-        + a {
-          //font-style: italic;
+        ~ a {
+          font-family: $font-family-standard;
           text-transform: none;
         }
       }
@@ -110,12 +109,12 @@
 
   .owl-theme {
     .owl-nav button[class*=owl-] {
-      font: 4rem $container-font;
+      font-size: 4rem;
       margin-top: 0;
       position: fixed;
 
       @include breakpoint(lg) {
-        font-size: 8rem;
+        font-size: 5rem;
       }
     }
 

@@ -56,7 +56,7 @@
         color: $primary;
         content: 'V';
         display: inline-block;
-        font-family: $container-font;
+        font-family: $font-container;
         margin-left: 10px;
         transform: rotate(-90deg);
       }
@@ -119,12 +119,6 @@
   }
 }
 
-.block-views-blocknews-broadcast-dates h2 {
-  @extend %aside-h2;
-
-  &:first-of-type {
-    border: 0;
-    margin-top: 0;
-    padding-top: 0;
-  }
+#block-views-block-news-aired-dates + h2 {
+  @include aside-h2-single;
 }
