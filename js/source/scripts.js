@@ -81,6 +81,15 @@
             navText: isFrontpage ? ['V', 'V'] : ['⭠', '⭢']
           });
 
+          if (isFrontpage) {
+            $owlCarousel.on('changed.owl.carousel', function(event) {
+              setTimeout(function() {
+                var $activeVideo = $owlCarousel.find('.owl-item.active').find('video');
+                $activeVideo[0].currentTime = 0;
+              }, 0);
+            });
+          }
+
           $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
           $('.owl-next').attr('title', isFrontpage ? 'nächstes Video' : 'nächstes Bild');
 
@@ -200,7 +209,8 @@
             });
           }
 
-          var $broadcastSchedule = $('#block-views-block-news-broadcast-dates, #block-views-block-news-aired-dates');
+          var $broadcastSchedule = $(
+              '#block-views-block-news-broadcast-dates, #block-views-block-news-aired-dates');
           if ($broadcastSchedule.length) {
             $broadcastSchedule.prependTo('aside');
           }
