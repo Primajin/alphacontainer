@@ -1,0 +1,23 @@
+@keyframes sway-left {
+  0% {
+    left: 10%
+  }
+  50% {
+    left: 15%
+  }
+  100% {
+    left: 10%
+  }
+}
+
+@keyframes sway-right {
+  0% {
+    right: 10%
+  }
+  50% {
+    right: 15%
+  }
+  100% {
+    right: 10%
+  }
+}
