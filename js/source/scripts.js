@@ -17,6 +17,8 @@
     attach: function(context, settings) {
       // var $document = $(document);
       // var $body = $(document.body);
+      var mobileBreakpoint = 544;
+      var desktopBreakpoint = 1024;
 
       $(document).ready(function() {
         // Execute code once the DOM is ready.
@@ -36,7 +38,7 @@
             });
           });
 
-          if ($(window).width() > 992) {
+          if ($(window).width() > mobileBreakpoint) {
             $videos.attr({'autoplay': true, 'preload': 'auto'});
             $videos.each(function() {
               var waitTime = 150;
@@ -64,7 +66,7 @@
           }
 
           /* owl.on('initialized.owl.carousel resized.owl.carousel changed.owl.carousel', function (event) {
-           if ($(window).width() > 992) {
+           if ($(window).width() > mobileBreakpoint) {
            owl.find('video').attr({'autoplay': true, 'preload': 'auto'});
            }
            });*/
@@ -104,7 +106,7 @@
                   link = $that.find('a').attr('href');
 
               $that.on('click', function() {
-                if ($(window).width() < 1025) {
+                if ($(window).width() <= desktopBreakpoint) {
                   if ($that.hasClass('active')) {
                     window.location.href = link;
                   } else {
@@ -225,7 +227,7 @@
       $(window).on('resize', function() {
         // Execute code when the window is resized.
 
-        if ($(window).width() > 992) {
+        if ($(window).width() > mobileBreakpoint) {
           var videos = $('.owl-carousel').find('video');
           videos.attr({'autoplay': true, 'preload': 'auto'});
           videos.each(function() {

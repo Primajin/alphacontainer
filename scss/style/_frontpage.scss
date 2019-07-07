@@ -30,13 +30,7 @@
       background: transparent none center center no-repeat;
       background-size: cover;
 
-      .no-ios:not(.safari) & {
-        @include breakpoint(md) {
-          background-image: none !important;
-        }
-      }
-
-      @include breakpoint(1025px) {
+      @include breakpoint(sm) {
         background-image: none !important;
       }
 
@@ -59,16 +53,12 @@
       video {
         display: none;
 
-        .safari & {
-          z-index: -1000;
-        }
-
-        @include breakpoint(md) {
+        @include breakpoint(sm) {
           display: block;
         }
 
-        .ios & {
-          display: none;
+        .safari & {
+          z-index: -1000;
         }
       }
     }
