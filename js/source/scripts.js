@@ -74,7 +74,7 @@
           var isFrontpage = document.body.classList.contains('homepage');
           $owlCarousel.owlCarousel({
             autoplay: true,
-            autoplayTimeout: 15000,
+            autoplayTimeout: 14500,
             autoplayHoverPause: false,
             items: 1,
             loop: true,
@@ -85,6 +85,10 @@
 
           if (isFrontpage) {
             $owlCarousel.on('changed.owl.carousel', function(event) {
+              // reset autoplay timer
+              // https://stackoverflow.com/questions/50488663/reset-owl-carousel-autoplaytimeout-after-user-action
+              $owlCarousel.trigger('stop.owl.autoplay');
+              $owlCarousel.trigger('play.owl.autoplay');
               setTimeout(function() {
                 var $activeVideo = $owlCarousel.find('.owl-item.active').find('video');
                 $activeVideo[0].currentTime = 0;
