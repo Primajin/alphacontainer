@@ -49,6 +49,7 @@
       transition: opacity $transition-standard;
     }
 
+    &.active,
     &:active,
     &:focus,
     &:hover {
