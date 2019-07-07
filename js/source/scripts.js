@@ -94,6 +94,18 @@
                 $activeVideo[0].currentTime = 0;
               }, 0);
             });
+
+            // Execute code when a key was pressed and went up again
+            $(document.documentElement).on('keyup', function(event) {
+              // handle cursor keys
+              if (event && event.keyCode == 37) {
+                // go left
+                $owlCarousel.trigger('prev.owl.carousel');
+              } else if (event && event.keyCode == 39) {
+                // go right
+                $owlCarousel.trigger('next.owl.carousel');
+              }
+            });
           }
 
           $('.owl-prev').attr('title', isFrontpage ? 'vorheriges Video' : 'vorheriges Bild');
