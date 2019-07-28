@@ -30,8 +30,10 @@
       background: transparent none center center no-repeat;
       background-size: cover;
 
-      @include breakpoint(sm) {
-        background-image: none !important;
+      .no-ios:not(.safari) & {
+        @include breakpoint(sm) {
+          background-image: none !important;
+        }
       }
 
       > a,
@@ -57,8 +59,16 @@
           display: block;
         }
 
-        .safari & {
-          z-index: -1000;
+        .ios & {
+          display: none;
+
+          @media only screen and (min-width: $screen-sm-min) and (orientation: portrait) {
+            display: block;
+          }
+
+          @media only screen and (min-width: $screen-lg-min) {
+            display: block;
+          }
         }
       }
     }
