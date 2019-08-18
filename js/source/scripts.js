@@ -233,6 +233,11 @@
             $broadcastSchedule.prependTo('aside');
           }
 
+          var $formats = $('.formats');
+          if ($formats.length) {
+            $formats.insertBefore('aside');
+          }
+
         } // executed
       });// ready
 

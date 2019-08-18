@@ -1,0 +1,56 @@
+.page-formate {
+  aside {
+    display: none;
+  }
+
+  .content {
+    display: block;
+  }
+}
+
+.format {
+  .raster {
+    display: grid;
+    grid-auto-rows: 160px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-areas: "logo video video" "image image image";
+    justify-items: center;
+
+    @include breakpoint(sm) {
+      grid-auto-rows: initial;
+      grid-template-rows: 2fr 1fr;
+    }
+
+    img, video {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    img {
+      grid-column-start: 1;
+      grid-column-end: 4;
+
+      @include breakpoint(md) {
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
+
+      &:first-child {
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
+    }
+
+    .video {
+      grid-area: video;
+    }
+
+    video {
+      @include breakpoint(md) {
+        height: 260px;
+      }
+    }
+  }
+}
