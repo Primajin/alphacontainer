@@ -36,6 +36,16 @@
         }
       }
 
+      .ios & {
+        @media only screen and (min-width: $screen-sm-min) and (orientation: portrait) {
+          background-image: none !important;
+        }
+
+        @media only screen and (min-width: $screen-lg-min) {
+          background-image: none !important;
+        }
+      }
+
       > a,
       video {
         height: auto;
