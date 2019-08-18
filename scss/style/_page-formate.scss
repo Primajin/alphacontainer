@@ -10,47 +10,33 @@
 
 .format {
   .raster {
-    display: grid;
-    grid-auto-rows: 160px;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    grid-template-areas: "logo video video" "image image image";
-    justify-items: center;
+    display: flex;
+    flex-flow: row wrap;
+
+    img, .video {
+      flex-basis: 100%;
+      margin: auto;
+      padding-bottom: 8px;
+      width: 0;
+
+      @include breakpoint(sm) {
+        padding: 8px;
+      }
+    }
 
     @include breakpoint(sm) {
-      grid-auto-rows: initial;
-      grid-template-rows: 2fr 1fr;
-    }
-
-    img, video {
-      height: 100%;
-      object-fit: contain;
-      width: 100%;
-    }
-
-    img {
-      grid-column-start: 1;
-      grid-column-end: 4;
-
-      @include breakpoint(md) {
-        grid-column-start: auto;
-        grid-column-end: auto;
+      img {
+        flex-basis: 33%;
       }
 
-      &:first-child {
-        grid-column-start: auto;
-        grid-column-end: auto;
+      .video {
+        flex-basis: 66%;
       }
-    }
-
-    .video {
-      grid-area: video;
     }
 
     video {
-      @include breakpoint(md) {
-        height: 260px;
-      }
+      width: 100%;
+      height: auto;
     }
   }
 }
