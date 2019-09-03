@@ -161,6 +161,16 @@
               var $input = $this.find('input').add($this.find('textarea'));
               var placeholder = $input.attr('placeholder');
 
+              function checkContent(that) {
+                if (that.value && that.value.length) {
+                  $input.addClass('filled');
+                } else {
+                  $input.removeClass('filled');
+                }
+              }
+
+              checkContent($input[0]);
+
               if (placeholder && placeholder.length) {
                 $input.removeAttr('placeholder').
                     after('<label class="placeholder" for="' + $input.attr('id') + '">' + placeholder + '</label>');
@@ -170,11 +180,7 @@
               }
 
               $input.on('change', function() {
-                if (this.value && this.value.length) {
-                  $(this).addClass('filled');
-                } else {
-                  $(this).removeClass('filled');
-                }
+                checkContent(this);
               });
             });
 
