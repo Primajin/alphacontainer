@@ -1,6 +1,17 @@
 @import 'variables';
 @import 'mixins';
 
+.page-anni-dunkelmann {
+  #content {
+    margin: 0 auto;
+    max-width: 965px;
+  }
+
+  .basic-page {
+    padding: 0;
+  }
+}
+
 .section-anni-dunkelmann {
   [data-drupal-selector="edit-preview"],
   .content article {
@@ -16,15 +27,11 @@
     text-transform: uppercase;
   }
 
-  video, iframe, article {
-    max-width: 100%;
+  h3 {
+    margin-top: 3.3em;
   }
 
-  .owl-carousel {
-    margin: 0 auto;
-
-    @include breakpoint(lg) {
-      width: 500px;
-    }
+  video, iframe, article {
+    max-width: 100%;
   }
 }
