@@ -163,7 +163,10 @@
 
               if (placeholder && placeholder.length) {
                 $input.removeAttr('placeholder').
-                    after('<div class="placeholder">' + placeholder + '</div>');
+                    after('<label class="placeholder" for="' + $input.attr('id') + '">' + placeholder + '</label>');
+              } else {
+                var labelText = $input.siblings('label').text();
+                $input.after('<label class="placeholder" for="' + $input.attr('id') + '">' + labelText + '</label>');
               }
 
               $input.on('change', function() {

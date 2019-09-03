@@ -10,7 +10,7 @@ form, label, input, textarea {
   label {
     text-transform: uppercase;
 
-    &:not(.option) {
+    &:not(.option):not(.placeholder) {
       display: none;
     }
   }
@@ -84,6 +84,28 @@ form, label, input, textarea {
       top: 15px;
       transition: font-size $transition-fast, top $transition-fast;
       user-select: none;
+    }
+  }
+
+  @include breakpoint(md) {
+    form {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    .form-item,
+    .form-wrapper {
+      flex-basis: calc(50% - 25px);
+      margin-bottom: 50px;
+    }
+
+    .form-wrapper .form-item {
+      margin-bottom: 0;
+    }
+
+    .form-actions {
+      flex-basis: 100%;
     }
   }
 
