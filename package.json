@@ -23,7 +23,7 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "classnames": "^2.2.6",
     "json-api-normalizer": "^0.4.14",
     "lodash": "^4.17.13",
