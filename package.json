@@ -25,7 +25,7 @@
   "dependencies": {
     "axios": "^0.18.1",
     "classnames": "^2.2.6",
-    "json-api-normalizer": "^0.4.14",
+    "json-api-normalizer": "^0.4.16",
     "lodash": "^4.17.13",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
