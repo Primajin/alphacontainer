@@ -33,7 +33,7 @@
     "react-jss": "^8.6.1",
     "react-responsive": "^6.1.1",
     "react-scripts": "^2.1.8",
-    "react-slick": "^0.24.0",
+    "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
